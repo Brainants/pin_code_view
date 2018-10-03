@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomKeyboard extends StatefulWidget {
-  final Function onBackPressed, onKeyPressed;
+  final Function onBackPressed, onPressedKey;
   final TextStyle textStyle;
   CustomKeyboard({
     this.onBackPressed,
-    this.onKeyPressed,
-    this.textStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
+    this.onPressedKey,
+    this.textStyle,
   });
 
   CustomKeyboardState createState() => CustomKeyboardState();
@@ -14,10 +14,6 @@ class CustomKeyboard extends StatefulWidget {
 
 class CustomKeyboardState extends State<CustomKeyboard> {
   String code = "";
-
-  onPressedKey(String number) {
-    widget.onKeyPressed(number);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +27,21 @@ class CustomKeyboardState extends State<CustomKeyboard> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               IconButton(
-                onPressed: () => onPressedKey("1"),
+                onPressed: () => widget.onPressedKey("1"),
                 icon: Text(
                   "1",
                   style: widget.textStyle,
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("2"),
+                onPressed: () => widget.onPressedKey("2"),
                 icon: Text(
                   "2",
                   style: widget.textStyle,
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("3"),
+                onPressed: () => widget.onPressedKey("3"),
                 icon: Text(
                   "3",
                   style: widget.textStyle,
@@ -60,21 +56,21 @@ class CustomKeyboardState extends State<CustomKeyboard> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               IconButton(
-                onPressed: () => onPressedKey("4"),
+                onPressed: () => widget.onPressedKey("4"),
                 icon: Text(
                   "4",
                   style: widget.textStyle,
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("5"),
+                onPressed: () => widget.onPressedKey("5"),
                 icon: Text(
                   "5",
                   style: widget.textStyle,
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("6"),
+                onPressed: () => widget.onPressedKey("6"),
                 icon: Text(
                   "6",
                   style: widget.textStyle,
@@ -89,21 +85,21 @@ class CustomKeyboardState extends State<CustomKeyboard> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               IconButton(
-                onPressed: () => onPressedKey("7"),
+                onPressed: () => widget.onPressedKey("7"),
                 icon: Text(
                   "7",
                   style: widget.textStyle,
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("8"),
+                onPressed: () => widget.onPressedKey("8"),
                 icon: Text(
                   "8",
                   style: widget.textStyle,
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("9"),
+                onPressed: () => widget.onPressedKey("9"),
                 icon: Text(
                   "9",
                   style: widget.textStyle,
@@ -125,7 +121,7 @@ class CustomKeyboardState extends State<CustomKeyboard> {
                 ),
               ),
               IconButton(
-                onPressed: () => onPressedKey("0"),
+                onPressed: () => widget.onPressedKey("0"),
                 icon: Text(
                   "0",
                   style: widget.textStyle,

@@ -1,21 +1,23 @@
-library pin_code_view;
-
 import 'package:flutter/material.dart';
 import './custom_keyboard.dart';
 import './code_view.dart';
 
 class PinCode extends StatefulWidget {
-  final String title, subTitle;
-  final Function sendAgain, onCodeEntered;
+  final Text title, subTitle;
+  final Function onCodeEntered;
   final int codeLength;
+  final TextStyle keyTextStyle, codeTextStyle;
 
   PinCode({
     this.title,
     this.subTitle,
     this.codeLength = 6,
     this.onCodeEntered,
-    this.sendAgain,
+    this.keyTextStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
+    this.codeTextStyle = const TextStyle(
+        color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
   });
+
   PinCodeState createState() => PinCodeState();
 }
 
@@ -25,18 +27,8 @@ class PinCodeState extends State<PinCode> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Theme.of(context).primaryColor,
       child: Column(children: <Widget>[
-        Row(
-          children: <Widget>[
-            IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              color: Colors.white,
-              icon: Icon(Icons.arrow_back),
-            ),
-          ],
-        ),
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(20.0),
@@ -44,32 +36,14 @@ class PinCodeState extends State<PinCode> {
               children: <Widget>[
                 Expanded(child: Container()),
                 Container(
-                  padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 5.0),
-                  child: Text(
-                    widget.title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.white),
-                  ),
-                ),
-                Text(
-                  widget.subTitle,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
-                ),
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 5.0),
+                    child: widget.title),
+                widget.subTitle,
                 Expanded(child: Container()),
                 CodeView(
+                  codeTextStyle: widget.codeTextStyle,
                   code: smsCode,
-                ),
-                Expanded(child: Container()),
-                Text(
-                  "Didn't Receive?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
-                ),
-                FlatButton(
-                  child: Text("Send Again"),
-                  textColor: Theme.of(context).accentColor,
-                  onPressed: widget.sendAgain,
+                  length: widget.codeLength,
                 ),
                 Expanded(child: Container()),
               ],
@@ -77,7 +51,8 @@ class PinCodeState extends State<PinCode> {
           ),
         ),
         CustomKeyboard(
-          onKeyPressed: (key) {
+          textStyle: widget.keyTextStyle,
+          onPressedKey: (key) {
             if (smsCode.length < widget.codeLength) {
               setState(() {
                 smsCode = smsCode + key;

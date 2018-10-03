@@ -1,13 +1,19 @@
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 import 'package:pin_code_view/pin_code_view.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final calculator = new Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-    expect(() => calculator.addOne(null), throwsNoSuchMethodError);
+  testWidgets("title and subtitle", (WidgetTester tester) async {
+    await tester.pumpWidget(PinCode(
+      title: "Verify Code",
+      subTitle: "A code has been sent to your device, please enter it here.",
+    ));
+
+    var title = find.text("Verify Code");
+    var subtitle =
+        find.text("A code has been sent to your device, please enter it here.");
+
+    expect(title, findsOneWidget);
+    expect(subtitle, findsOneWidget);
   });
 }

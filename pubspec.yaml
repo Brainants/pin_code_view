@@ -1,8 +1,8 @@
 name: pin_code_view
-description: A flutter plugin to how beautiful pin code view.
+description: A flutter plugin to show beautiful pin code view.
 version: 0.0.1
 author: Aawaz Gyawali <awazgyawali@gmail.com>
-homepage:
+homepage: https://github.com/awazgyawali/pin_code_view
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

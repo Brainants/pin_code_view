@@ -4,21 +4,22 @@ import 'package:flutter/material.dart';
 import './custom_keyboard.dart';
 import './code_view.dart';
 
-class VerifyCode extends StatefulWidget {
+class PinCode extends StatefulWidget {
   final String title, subTitle;
   final Function sendAgain, onCodeEntered;
   final int codeLength;
 
-  VerifyCode(
-      {this.title,
-      this.subTitle,
-      this.codeLength = 6,
-      this.onCodeEntered,
-      this.sendAgain});
-  VerifyCodeState createState() => VerifyCodeState();
+  PinCode({
+    this.title,
+    this.subTitle,
+    this.codeLength = 6,
+    this.onCodeEntered,
+    this.sendAgain,
+  });
+  PinCodeState createState() => PinCodeState();
 }
 
-class VerifyCodeState extends State<VerifyCode> {
+class PinCodeState extends State<PinCode> {
   String smsCode = "";
 
   @override

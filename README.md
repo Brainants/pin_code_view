@@ -1,9 +1,34 @@
 # pin_code_view
 
-A new flutter package project.
+A beautiful looking pin_code_view for flutter apps, customizable and fluid.
+Pull requests are always welcomed.
 
-## Getting Started
+## Installation
 
-For help getting started with Flutter, view our online [documentation](https://flutter.io/).
+In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
-For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).
+```yaml
+  pin_code_view: 0.0.1
+```
+
+## Usage
+
+```dart
+import 'package:pin_code_view/pin_code_view.dart';
+
+class MyWidget extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return PinCode(
+      title: "Verification code",
+      subTitle: "A code has been sent to your phone number.", 
+      codeLength: 6,
+      onCodeEntered:(code){
+        //this function is invoked once the code is completely entered
+      },
+      sendAgain:(){
+        //this function is invoked if the user presses send again button
+      }
+    );
+  }
+}
+```

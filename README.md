@@ -8,7 +8,7 @@ Pull requests are always welcomed.
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  pin_code_view: 0.0.1
+  pin_code_view: 0.0.3
 ```
 
 ## Usage
@@ -19,15 +19,20 @@ import 'package:pin_code_view/pin_code_view.dart';
 class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PinCode(
-      title: "Verification code",
-      subTitle: "A code has been sent to your phone number.", 
+      title: Text(
+        "Lock Screen",
+        style: TextStyle(
+            color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
+      ),
+      subTitle: Text(
+        "Hello Boys",
+        style: TextStyle(color: Colors.white),
+      ),
       codeLength: 6,
-      onCodeEntered:(code){
-        //this function is invoked once the code is completely entered
+      onCodeEntered: (code) {
+        //callback after full code has been entered
+        print(code);
       },
-      sendAgain:(){
-        //this function is invoked if the user presses send again button
-      }
     );
   }
 }

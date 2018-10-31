@@ -8,7 +8,7 @@ Pull requests are always welcomed.
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  pin_code_view: 0.0.3
+  pin_code_view: 0.1
 ```
 
 ## Usage
@@ -24,8 +24,9 @@ class MyWidget extends StatelessWidget {
         style: TextStyle(
             color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
       ),
+      
       subTitle: Text(
-        "Hello Boys",
+        "Enter the pin code",
         style: TextStyle(color: Colors.white),
       ),
       codeLength: 6,

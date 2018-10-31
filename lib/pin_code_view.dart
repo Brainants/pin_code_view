@@ -7,11 +7,13 @@ class PinCode extends StatefulWidget {
   final Function onCodeEntered;
   final int codeLength;
   final TextStyle keyTextStyle, codeTextStyle;
+  final bool obscurePin;
 
   PinCode({
     this.title,
     this.subTitle,
     this.codeLength = 6,
+    this.obscurePin = false,
     this.onCodeEntered,
     this.keyTextStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
     this.codeTextStyle = const TextStyle(
@@ -43,6 +45,7 @@ class PinCodeState extends State<PinCode> {
                 CodeView(
                   codeTextStyle: widget.codeTextStyle,
                   code: smsCode,
+                  obscurePin: widget.obscurePin,
                   length: widget.codeLength,
                 ),
                 Expanded(child: Container()),

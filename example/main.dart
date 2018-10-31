@@ -15,6 +15,7 @@ class PinCodeScreen extends StatelessWidget {
           "Hello Boys",
           style: TextStyle(color: Colors.white),
         ),
+        obscurePin: true, // to make pin * instead of number
         codeLength: 6,
         onCodeEntered: (code) {
           //callback after full code has been entered

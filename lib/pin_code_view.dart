@@ -7,7 +7,7 @@ class PinCode extends StatefulWidget {
   final String error;
   final Function onCodeEntered;
   final int codeLength;
-  final TextStyle keyTextStyle, codeTextStyle;
+  final TextStyle keyTextStyle, codeTextStyle, errorTextStyle;
   final bool obscurePin;
   final Color backgroundColor;
 
@@ -18,6 +18,7 @@ class PinCode extends StatefulWidget {
     this.codeLength = 6,
     this.obscurePin = false,
     this.onCodeEntered,
+    this.errorTextStyle = const TextStyle(color: Colors.red, fontSize: 15),
     this.keyTextStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
     this.codeTextStyle = const TextStyle(
         color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
@@ -53,8 +54,8 @@ class PinCodeState extends State<PinCode> {
                   length: widget.codeLength,
                 ),
                 Text(
-                  "${widget.error}",
-                  style: TextStyle(color: Colors.red, fontSize: 15),
+                  '${widget.error}',
+                  style: this.errorTextStyle,
                 ),
                 Expanded(child: Container()),
               ],

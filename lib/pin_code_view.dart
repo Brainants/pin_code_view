@@ -4,6 +4,7 @@ import './code_view.dart';
 
 class PinCode extends StatefulWidget {
   final Text title, subTitle;
+  final String error;
   final Function onCodeEntered;
   final int codeLength;
   final TextStyle keyTextStyle, codeTextStyle;
@@ -12,6 +13,7 @@ class PinCode extends StatefulWidget {
 
   PinCode({
     this.title,
+    this.error = '',
     this.subTitle,
     this.codeLength = 6,
     this.obscurePin = false,
@@ -49,6 +51,10 @@ class PinCodeState extends State<PinCode> {
                   code: smsCode,
                   obscurePin: widget.obscurePin,
                   length: widget.codeLength,
+                ),
+                Text(
+                  "${widget.error}",
+                  style: TextStyle(color: Colors.red, fontSize: 15),
                 ),
                 Expanded(child: Container()),
               ],

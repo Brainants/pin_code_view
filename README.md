@@ -8,7 +8,7 @@ Pull requests are always welcomed.
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  pin_code_view: 0.1
+  pin_code_view: 0.1.1
 ```
 
 ## Usage

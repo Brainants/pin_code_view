@@ -22,7 +22,7 @@ class PinCode extends StatefulWidget {
     this.keyTextStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
     this.codeTextStyle = const TextStyle(
         color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
-    this.backgroundColor = Theme.of(context).primaryColor,
+    this.backgroundColor,
   });
 
   PinCodeState createState() => PinCodeState();
@@ -34,7 +34,7 @@ class PinCodeState extends State<PinCode> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: widget.backgroundColor,
+      color: widget.backgroundColor ?? Theme.of(context).primaryColor,
       child: Column(children: <Widget>[
         Expanded(
           child: Padding(

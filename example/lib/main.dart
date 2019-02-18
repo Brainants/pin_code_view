@@ -25,9 +25,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Pin Code View Example"),
-      ),
       body: PinCode(
         title: Text(
           "Lock Screen",

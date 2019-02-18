@@ -22,7 +22,7 @@ class PinCode extends StatefulWidget {
     this.keyTextStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
     this.codeTextStyle = const TextStyle(
         color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
-    this.backgroundColor,
+    this.backgroundColor = Theme.of(context).primaryColor,
   });
 
   PinCodeState createState() => PinCodeState();

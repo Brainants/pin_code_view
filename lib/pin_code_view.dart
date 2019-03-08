@@ -77,8 +77,8 @@ class PinCodeState extends State<PinCode> {
               if (smsCode == widget.correctPin) {
                 widget.onCodeSuccess(smsCode);
               } else {
-                smsCode = "";
                 widget.onCodeFail(smsCode);
+                smsCode = "";
               }
             }
           },

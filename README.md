@@ -8,7 +8,7 @@ Pull requests are always welcomed.
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  pin_code_view: 0.1.1
+  pin_code_view: 0.2.1
 ```
 
 ## Usage
@@ -30,10 +30,15 @@ class MyWidget extends StatelessWidget {
         style: TextStyle(color: Colors.white),
       ),
       codeLength: 6,
-      onCodeEntered: (code) {
-        //callback after full code has been entered
-        print(code);
+      // you may skip correctPin and plugin will give you pin as
+      // call back of [onCodeFail] before it clears pin
+      correctPin: "1234",
+      onCodeSuccess: (code) {
+        print(code); 
       },
+      onCodeFail: (code) {
+        print(code); 
+      }, 
     );
   }
 }

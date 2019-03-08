@@ -56,6 +56,7 @@ class PinCodeState extends State<PinCode> {
                 Text(
                   '${widget.error}',
                   style: this.widget.errorTextStyle,
+                  textAlign: TextAlign.center,
                 ),
                 Expanded(child: Container()),
               ],

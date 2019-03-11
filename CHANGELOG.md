@@ -1,6 +1,6 @@
 ## [0.2.1] - 11 Mar 19
 
-* BREAKING CHANGE !!: (onEnteredPin) removed, replaced with onCodeFail/onCodeSuccess with correctPin, if you want the old behaviour just don't provide correctPin and onCodeFail will work the same as the old onEnteredPin
+* BREAKING CHANGE !!: (onCodeEntered) removed, replaced with onCodeFail/onCodeSuccess with correctPin, if you want the old behaviour just don't provide correctPin and onCodeFail will work the same as the old onCodeEntered
 * new : onCodeSuccess is the callback if entered code matches (==) the correctPin
 * new : onCodeFail is the callback if entered code doesn't matche (!=) the correctPin
 

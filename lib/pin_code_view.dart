@@ -4,8 +4,8 @@ import './code_view.dart';
 
 class PinCode extends StatefulWidget {
   final Text title, subTitle;
-  final String error;
-  final Function onCodeEntered;
+  final String error, correctPin;
+  final Function onCodeSuccess, onCodeFail;
   final int codeLength;
   final TextStyle keyTextStyle, codeTextStyle, errorTextStyle;
   final bool obscurePin;
@@ -13,11 +13,13 @@ class PinCode extends StatefulWidget {
 
   PinCode({
     this.title,
+    this.correctPin = "****", // Default Value, use onCodeFail as onEnteredPin
     this.error = '',
     this.subTitle,
     this.codeLength = 6,
     this.obscurePin = false,
-    this.onCodeEntered,
+    this.onCodeSuccess,
+    this.onCodeFail,
     this.errorTextStyle = const TextStyle(color: Colors.red, fontSize: 15),
     this.keyTextStyle = const TextStyle(color: Colors.white, fontSize: 25.0),
     this.codeTextStyle = const TextStyle(
@@ -56,6 +58,7 @@ class PinCodeState extends State<PinCode> {
                 Text(
                   '${widget.error}',
                   style: this.widget.errorTextStyle,
+                  textAlign: TextAlign.center,
                 ),
                 Expanded(child: Container()),
               ],
@@ -71,7 +74,12 @@ class PinCodeState extends State<PinCode> {
               });
             }
             if (smsCode.length == widget.codeLength) {
-              widget.onCodeEntered(smsCode);
+              if (smsCode == widget.correctPin) {
+                widget.onCodeSuccess(smsCode);
+              } else {
+                widget.onCodeFail(smsCode);
+                smsCode = "";
+              }
             }
           },
           onBackPressed: () {

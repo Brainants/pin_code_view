@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pin Code Screen Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -29,7 +29,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           "Lock Screen",
           style: TextStyle(
-              color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 25.0,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         subTitle: Text(
           "Hello Boys",
@@ -37,8 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         obscurePin: true, // to make pin * instead of number
         codeLength: 6,
-        onCodeEntered: (code) {
-          //callback after full code has been entered
+        correctPin: "123456",
+        onCodeSuccess: (code) {
+          print(code);
+        },
+        onCodeFail: (code) {
           print(code);
         },
       ),

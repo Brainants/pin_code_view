@@ -32,7 +32,7 @@ class MyWidget extends StatelessWidget {
       codeLength: 6,
       // you may skip correctPin and plugin will give you pin as
       // call back of [onCodeFail] before it clears pin
-      correctPin: "1234",
+      correctPin: "123456",
       onCodeSuccess: (code) {
         print(code); 
       },

@@ -1,6 +1,9 @@
 # pin_code_view_example
 
-A new Flutter project.
+A beautiful looking pin_code_view for flutter apps, customizable and fluid.
+Pull requests are always welcomed.
+
+[example main.dart](lib/main.dart)
 
 ## Getting Started
 

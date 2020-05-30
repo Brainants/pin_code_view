@@ -3,17 +3,20 @@
 A beautiful looking pin_code_view for flutter apps, customizable and fluid.
 Pull requests are always welcomed.
 
+![Image 1](./images/1.png)
+![Image 2](/images/2.png)
+
 ## Features
+
 1. Code length customization
 2. On Screen keypad
-
 
 ## Installation
 
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  pin_code_view: 0.2.1
+pin_code_view: 0.2.1
 ```
 
 ## Usage
@@ -29,7 +32,7 @@ class MyWidget extends StatelessWidget {
         style: TextStyle(
             color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
       ),
-      
+
       subTitle: Text(
         "Enter the pin code",
         style: TextStyle(color: Colors.white),
@@ -39,11 +42,11 @@ class MyWidget extends StatelessWidget {
       // call back of [onCodeFail] before it clears pin
       correctPin: "123456",
       onCodeSuccess: (code) {
-        print(code); 
+        print(code);
       },
       onCodeFail: (code) {
-        print(code); 
-      }, 
+        print(code);
+      },
     );
   }
 }

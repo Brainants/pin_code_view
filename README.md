@@ -3,6 +3,11 @@
 A beautiful looking pin_code_view for flutter apps, customizable and fluid.
 Pull requests are always welcomed.
 
+## Features
+1. Code length customization
+2. On Screen keypad
+
+
 ## Installation
 
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:

@@ -3,8 +3,8 @@
 A beautiful looking pin_code_view for flutter apps, customizable and fluid.
 Pull requests are always welcomed.
 
-![Image 1](./images/1.png)
-![Image 2](/images/2.png)
+<img src="images/1.png" width="30%">.
+<img src="images/2.png" width="30%">.
 
 ## Features
 

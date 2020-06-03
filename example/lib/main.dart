@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onCodeFail: (code) {
           print(code);
         },
+        showLetters: true, // Show the letters under the numbers on PinCodeButtons
       ),
     );
   }

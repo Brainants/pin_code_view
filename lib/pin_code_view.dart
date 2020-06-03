@@ -10,6 +10,7 @@ class PinCode extends StatefulWidget {
   final TextStyle keyTextStyle, codeTextStyle, errorTextStyle;
   final bool obscurePin;
   final Color backgroundColor;
+  final bool showLetters;
 
   PinCode({
     this.title,
@@ -25,6 +26,7 @@ class PinCode extends StatefulWidget {
     this.codeTextStyle = const TextStyle(
         color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),
     this.backgroundColor,
+    this.showLetters = false,
   });
 
   PinCodeState createState() => PinCodeState();
@@ -89,6 +91,7 @@ class PinCodeState extends State<PinCode> {
                 smsCode = smsCode.substring(0, codeLength - 1);
               });
           },
+          showLetters: widget.showLetters,
         ),
       ]),
     );

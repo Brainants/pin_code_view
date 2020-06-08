@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 class CustomKeyboard extends StatefulWidget {
   final Function onBackPressed, onPressedKey;
   final TextStyle textStyle;
+  final bool showLetters;
+
   CustomKeyboard({
     this.onBackPressed,
     this.onPressedKey,
     this.textStyle,
+    this.showLetters = false,
   });
 
   CustomKeyboardState createState() => CustomKeyboardState();
@@ -26,25 +29,76 @@ class CustomKeyboardState extends State<CustomKeyboard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("1"),
-                icon: Text(
-                  "1",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "1",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        '',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("2"),
-                icon: Text(
-                  "2",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "2",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'A B C',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("3"),
-                icon: Text(
-                  "3",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "3",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'D E F',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
             ],
@@ -55,25 +109,76 @@ class CustomKeyboardState extends State<CustomKeyboard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("4"),
-                icon: Text(
-                  "4",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "4",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'G H I',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("5"),
-                icon: Text(
-                  "5",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "5",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'J K L',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("6"),
-                icon: Text(
-                  "6",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "6",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'M N O',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
             ],
@@ -84,25 +189,76 @@ class CustomKeyboardState extends State<CustomKeyboard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("7"),
-                icon: Text(
-                  "7",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "7",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'P Q R S',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("8"),
-                icon: Text(
-                  "8",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "8",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'T U V',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
-              IconButton(
+              MaterialButton(
                 onPressed: () => widget.onPressedKey("9"),
-                icon: Text(
-                  "9",
-                  style: widget.textStyle,
+                shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: List.unmodifiable(() sync* {
+                    // NOTE: As long as there is no spread-operator in stable channel, this is the workaround...
+                    yield Text(
+                      "9",
+                      style: widget.textStyle,
+                    );
+                    if (widget.showLetters) {
+                      yield SizedBox(height: widget.textStyle.fontSize * 0.5);
+                      yield Text(
+                        'W Y X Z',
+                        style: TextStyle(
+                          color: widget.textStyle.color,
+                          fontSize: widget.textStyle.fontSize * 0.5,
+                        ),
+                      );
+                    }
+                  }()),
                 ),
               ),
             ],
@@ -113,25 +269,27 @@ class CustomKeyboardState extends State<CustomKeyboard> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              IconButton(
-                onPressed: () {},
-                icon: Text(
-                  "",
-                  style: widget.textStyle,
+              Expanded(child: Container()), // Empty Container, to fill the space
+              Expanded(
+                child: MaterialButton(
+                  onPressed: () => widget.onPressedKey("0"),
+                  shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    "0",
+                    style: widget.textStyle,
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () => widget.onPressedKey("0"),
-                icon: Text(
-                  "0",
-                  style: widget.textStyle,
-                ),
-              ),
-              IconButton(
-                onPressed: () => widget.onBackPressed(),
-                icon: Icon(
-                  Icons.backspace,
-                  color: Colors.white,
+              Expanded(
+                child: MaterialButton(
+                  onPressed: () => widget.onBackPressed(),
+                  shape: CircleBorder(side: BorderSide(width: double.infinity)),
+                  padding: EdgeInsets.all(16),
+                  child: Icon(
+                    Icons.backspace,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

@@ -8,3 +8,14 @@ build/
 ios/.generated/
 ios/Flutter/Generated.xcconfig
 ios/Runner/GeneratedPluginRegistrant.*
+pin_code_view.iml
+pubspec.lock
+.idea/.gitignore
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/codeStyles/Project.xml
+.idea/libraries/Dart_Packages.xml
+.idea/libraries/Flutter_Plugins.xml
+example/ios/Flutter/flutter_export_environment.sh
+example/ios/Flutter/Flutter.podspec
+example/ios/Runner.xcodeproj/project.pbxproj

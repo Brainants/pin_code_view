@@ -1,6 +1,6 @@
 name: pin_code_view
 description: A flutter plugin to show beautiful pin code view. A on screen keyboard is placed at the bottom of the screen and a code view with blocks are added on the top of the screen.
-version: 0.3.0+1
+version: 0.3.0+2
 homepage: https://github.com/Brainants/pin_code_view
 
 environment:

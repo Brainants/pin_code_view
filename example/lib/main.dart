@@ -26,8 +26,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PinCode(
-        title: "Lock Screen",
-        subTitle: "Hello Boys",
+        title: "Enter PIN Code",
+        subtitle: "Please enter the code you received on your Phone",
         onChange: (String code) {
           print(code);
         },

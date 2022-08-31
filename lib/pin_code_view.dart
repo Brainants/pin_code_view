@@ -12,7 +12,7 @@ enum KeyboardType {
 
 class PinCode extends StatefulWidget {
   final String title;
-  final String? subTitle, error;
+  final String? subtitle, error;
   final Function(String) onChange;
   final int codeLength;
   final TextStyle? titleTextStyle,
@@ -29,7 +29,7 @@ class PinCode extends StatefulWidget {
     required this.title,
 
     /// Subtitle of the pin code screen
-    this.subTitle,
+    this.subtitle,
 
     /// Callback function that is trigged on every key store.
     required this.onChange,
@@ -94,9 +94,9 @@ class PinCodeState extends State<PinCode> {
                       ).merge(widget.titleTextStyle),
                     ),
                   ),
-                  if (widget.subTitle != null)
+                  if (widget.subtitle != null)
                     Text(
-                      widget.subTitle!,
+                      widget.subtitle!,
                       style: TextStyle(
                         color: Colors.white,
                       ).merge(widget.subtitleTextStyle),
@@ -112,13 +112,14 @@ class PinCodeState extends State<PinCode> {
                     obscurePin: widget.obscurePin,
                     length: widget.codeLength,
                   ),
-                  Text(
-                    '${widget.error}',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ).merge(widget.errorTextStyle),
-                    textAlign: TextAlign.center,
-                  ),
+                  if (widget.error != null)
+                    Text(
+                      '${widget.error}',
+                      style: TextStyle(
+                        color: Colors.red,
+                      ).merge(widget.errorTextStyle),
+                      textAlign: TextAlign.center,
+                    ),
                   Expanded(child: Container()),
                 ],
               ),

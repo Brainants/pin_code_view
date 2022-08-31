@@ -7,7 +7,7 @@ void main() {
     await tester.pumpWidget(
       PinCode(
         title: "Verify Code",
-        subTitle: "A code has been sent to your device, please enter it here.",
+        subtitle: "A code has been sent to your device, please enter it here.",
         onChange: (_) {},
       ),
     );

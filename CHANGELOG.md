@@ -1,4 +1,4 @@
-## [0.3.0] - 2022 Aug 31
+## [0.3.0+1] - 2022 Aug 31
 * BREAKING CHANGE
 - Added null safety support
 - Refactored code

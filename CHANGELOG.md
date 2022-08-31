@@ -1,3 +1,11 @@
+## [0.3.0] - 2022 Aug 31
+* BREAKING CHANGE
+- Added null safety support
+- Refactored code
+- Added better textStyle support
+- Removed onCodeFail, onCodeSuccess  and added onChanged function.
+- Upgraded to android embedding v2
+
 ## [0.2.1] - 2019 Mar 11
 
 * BREAKING CHANGE !!: (onCodeEntered) removed, replaced with onCodeFail/onCodeSuccess with correctPin, if you want the old behaviour just don't provide correctPin and onCodeFail will work the same as the old onCodeEntered

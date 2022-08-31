@@ -31,6 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onChange: (String code) {
           print(code);
         },
+        obscurePin: true,
       ),
     );
   }

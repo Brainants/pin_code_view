@@ -3,8 +3,8 @@
 A beautiful looking pin_code_view for flutter apps, customizable and fluid.
 Pull requests are always welcomed.
 
-<img src="screenshots/Image-1.png" width="30%">.
-<img src="screenshots/Image-2.png" width="30%">.
+<img src="https://github.com/Brainants/pin_code_view/raw/master/screenshots/Image-1.png" width="30%">.
+<img src="https://github.com/Brainants/pin_code_view/raw/master/screenshots/Image-2.png" width="30%">.
 
 ## Features
 

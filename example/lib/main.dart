@@ -26,28 +26,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PinCode(
-        title: Text(
-          "Lock Screen",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 25.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        subTitle: Text(
-          "Hello Boys",
-          style: TextStyle(color: Colors.white),
-        ),
-        obscurePin: true, // to make pin * instead of number
-        codeLength: 6,
-        correctPin: "123456",
-        onCodeSuccess: (code) {
+        title: "Lock Screen",
+        subTitle: "Hello Boys",
+        onChange: (String code) {
           print(code);
         },
-        onCodeFail: (code) {
-          print(code);
-        },
-        showLetters: true, // Show the letters under the numbers on PinCodeButtons
       ),
     );
   }

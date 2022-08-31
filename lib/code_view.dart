@@ -1,24 +1,28 @@
-import 'package:flutter/material.dart';
-import 'dart:core';
+part of pin_code_view;
 
 class CodeView extends StatefulWidget {
-  CodeView({this.code, this.length = 6, this.codeTextStyle, this.obscurePin});
-  final String code;
+  CodeView({
+    this.code,
+    this.length = 6,
+    this.codeTextStyle,
+    this.obscurePin = true,
+  });
+  final String? code;
   final int length;
   final bool obscurePin;
-  final TextStyle codeTextStyle;
+  final TextStyle? codeTextStyle;
 
   CodeViewState createState() => CodeViewState();
 }
 
 class CodeViewState extends State<CodeView> {
   String getCodeAt(index) {
-    if (widget.code == null || widget.code.length < index)
+    if (widget.code == null || widget.code!.length < index)
       return "  ";
     else if (widget.obscurePin) {
       return "*";
     } else {
-      return widget.code.substring(index - 1, index);
+      return widget.code!.substring(index - 1, index);
     }
   }
 
